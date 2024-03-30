@@ -1,0 +1,53 @@
+.mb2 {
+    margin-bottom: 2em !important;
+}
+.css-46bh2p-MuiCardContent-root {
+    padding: 16px;
+    height: 150px;
+    overflow: hidden;
+}
+.extraText{
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 4;
+           line-clamp: 4; 
+   -webkit-box-orient: vertical;
+}
+.pageHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 0 1em;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.pageHeader h1 {
+    font-size: 2em;
+    font-weight: 400;
+    color: #444;
+    margin: 0;
+}
+
+.tableContainer {
+    width: 100%;
+    height: 400px;
+}
+
+.actionsContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.conf_modal {
+    max-width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: (-50%, -50%);
+}
+
+.conf_modal_actions {
+    padding: 15px 20px;
+    justify-content: flex-end;
+    border-top: 1px solid #e4e4e4;
+}
