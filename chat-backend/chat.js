@@ -15,7 +15,7 @@ async function connectToMongoDB() {
 }
 
 const API_URL = "https://api-inference.huggingface.co/models/google/gemma-7b-it";
-const headers = { "Authorization": "Bearer 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" };
+const headers = { "Authorization": "" };
 
 async function getData(payload) {
   try {
