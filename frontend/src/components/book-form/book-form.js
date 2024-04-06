@@ -204,6 +204,7 @@ export const BookForm = () => {
                                 <MenuItem value="Sci-Fi">Sci-Fi</MenuItem>
                                 <MenuItem value="Action">Action</MenuItem>
                                 <MenuItem value="Adventure">Adventure</MenuItem>
+                                <MenuItem value="Bussiness">Bussiness</MenuItem>
                                 <MenuItem value="Horror">Horror</MenuItem>
                                 <MenuItem value="Romance">Romance</MenuItem>
                                 <MenuItem value="Mystery">Mystery</MenuItem>
@@ -217,6 +218,9 @@ export const BookForm = () => {
                                 <MenuItem value="Literature">Literature</MenuItem>
                                 <MenuItem value="Poetry">Poetry</MenuItem>
                                 <MenuItem value="Philosophy">Philosophy</MenuItem>
+                                <MenuItem value="Self Development">Self Development</MenuItem>
+                                <MenuItem value="Politics">Politics</MenuItem>
+                                <MenuItem value="Writing">Writing</MenuItem>
                             </Select>
                         </FormControl>
                         <FormControl className={classes.mb2}>

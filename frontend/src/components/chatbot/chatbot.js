@@ -45,13 +45,25 @@ const ChatComponent = () => {
       setUserMessage('');
   
       try {
-        const response = await fetch(`http://localhost:5000/books/${userMessage}`);
+        const payload = {
+          prompt: `${userMessage}------------------>`
+        };
+  
+        const response = await fetch(`http://localhost:1000/api/generateOutput`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        });
+  
         const data = await response.json();
   
         if (response.ok) {
+          const parsedOutput = parseOutput(data.output);
           setMessages((prevMessages) => [
             ...prevMessages,
-            { text: JSON.stringify(data), isBot: true },
+            { text: parsedOutput, isBot: true },
           ]);
           const popAudio = new Audio(popSound);
           popAudio.play();
@@ -68,6 +80,27 @@ const ChatComponent = () => {
           { text: 'An error occurred while fetching the data.', isBot: true },
         ]);
       }
+    }
+  };
+  
+  const parseOutput = (output) => {
+    // Remove the leading and trailing new lines
+    const trimmedOutput = output.trim();
+  
+    // Extract the text between the double quotes
+    const regex = /\\"(.*?)\\"/;
+    const match = trimmedOutput.match(regex);
+  
+    if (match && match[1]) {
+      // Replace escaped newline characters with actual line breaks
+      let parsedText = match[1].replace(/\\n/g, '\n');
+  
+      // Replace dashes with line break tags
+      parsedText = parsedText.replace(/-/g, '<br/>');
+  
+      return parsedText;
+    } else {
+      return trimmedOutput;
     }
   };
 

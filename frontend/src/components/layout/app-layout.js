@@ -118,7 +118,7 @@ export const AppLayout = () => {
                                         open={Boolean(anchorElUser)}
                                         onClose={handleCloseUserMenu}
                                     >
-                                        <MenuItem onClick={handleCloseUserMenu}>
+                                        <MenuItem onClick={() => navigate('/books')}>
                                             <Typography textAlign="center">Dashboard</Typography>
                                         </MenuItem>
                                         <MenuItem onClick={handleLogout}>

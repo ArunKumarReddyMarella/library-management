@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const autoIncrement = require('mongoose-auto-increment');
+// const mongoose = require('mongoose');
+// const autoIncrement = require('mongoose-auto-increment');
 
-autoIncrement.initialize(mongoose.connection);
+// autoIncrement.initialize(mongoose.connection);
 
-module.exports = autoIncrement;
+// module.exports = autoIncrement;
